@@ -28,7 +28,7 @@ function getComputerChoice() {
 function playRound(){
 
     let computerSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
+    let playerSelection = getComputerChoice();
 
     if (computerSelection === 0)  {
         console.log("Computer chose rock");
@@ -52,23 +52,46 @@ function playRound(){
 
     
     var winArray = [
-        ["draw", "win", "lose"],
+        ["draw", "player", "lose"],
         ["lose", "draw", "win"],
         ["win", "lose", "draw"],
     ]
 
     let winner = (winArray[computerSelection][playerSelection]);
 
-    return winner;
-
-}
-
-let firstRound = playRound();
-
-if (firstRound === "win")  {
+if (winner === "win")  {
     console.log("Player wins!");
-} else if (firstRound === "lose") {
+} else if (winner === "lose") {
     console.log("Player loses.");
-} else if (firstRound === "draw") {
+} else if (winner === "draw") {
     console.log("It's a draw");
+    
+return winner;
 }
+
+
+}
+
+function game() {
+    let totalRounds = 0;
+    let playerScore = 0;
+    let cpuScore = 0;
+
+    do {
+        let currentRound = playRound();
+        if (currentRound === "win") {
+            playerScore++;
+        }
+        else if (currentRound === "lose") {
+            cpuScore++;
+        }
+
+        totalRounds++;
+        console.log("Total rounds: " +totalRounds);
+        console.log("Score:"+ " Player " + playerScore + " // "  + "Computer " + cpuScore);
+    }
+    while (totalRounds < 5) 
+
+    }
+
+console.log(game());
