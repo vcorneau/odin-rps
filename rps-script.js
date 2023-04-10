@@ -28,7 +28,7 @@ function getComputerChoice() {
 function playRound(){
 
     let computerSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
+    let playerSelection = getComputerChoice(); //Temporarily deactivated to not have to input with every reload.
 
     if (computerSelection === 0)  {
         console.log("Computer chose rock");

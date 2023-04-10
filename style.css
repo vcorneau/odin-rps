@@ -1,0 +1,32 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 37px;
+    color: white;
+    background-image: linear-gradient(#8c52ff,#ff914d);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.heroTitle {
+    font-family: 'Holtwood One SC', serif;
+    text-align: center;
+}
+
+.userSelection {
+    display: flex;
+    justify-content: center;  
+}
+
+.button {
+    display: block;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 20px solid white;
+    margin: 2%;
+}
+
+.button:active {
+    border: 20px solid rgb(243, 213, 41);
+}
+
