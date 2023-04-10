@@ -1,3 +1,15 @@
+const rockButton = document.getElementById('rockButton');
+const paperButton = document.getElementById('paperButton');
+const scissorsButton = document.getElementById('scissorsButton');
+
+/*Add event listener to buttons*/
+
+rockButton.addEventListener('click',console.log('Rock click'));
+paperButton.addEventListener('click',console.log('Paper click'));
+scissorsButton.addEventListener('click',console.log('Scissors click'));
+
+
+
 /*Receive player's input and set it to lowercase*/
 function getPlayerChoice() {
     let playerPrompt = prompt("Type in Rock, Paper or Scissors:").toLowerCase();
