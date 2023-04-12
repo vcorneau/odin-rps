@@ -3,33 +3,35 @@
 const buttons = document.getElementsByClassName("button");
 
 let buttonClicked = false;
-
 let userSelection;
+let playerInt;
+
+/*Computer generates a random number between 0 and 2*/
+function getComputerChoice() { 
+    return Math.floor(Math.random()*3);
+}
 
 for (let button of buttons) {
     button.addEventListener('click', function handleClick() {
         console.log('a button was clicked');
         buttonClicked = true;
+        
         if (buttonClicked = true) {
             userSelection = event.target.id;
             }
             console.log(userSelection);
+
+            if (userSelection == 'rockButton') {
+                playerInt = 0;
+            }
+            else if (userSelection == 'paperButton') {
+                playerInt = 1;
+            }
+            else if (userSelection == 'scissorsButton') {
+                playerInt = 2;
+            }
+            console.log(playerInt);
         }
     )
 }
-
-
-
-/*function buttonPressed(e) {
-    console.log(e.target.id); // Get ID of Clicked Element
-
-    return e.target.id;
-}*/
-
-//Create event listener for button clicks
-/*for (let button of buttons) {
-  button.addEventListener("click", buttonPressed); 
-}*/
-
-//Get player selection via button clicks
 
