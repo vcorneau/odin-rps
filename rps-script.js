@@ -35,35 +35,37 @@ for (let button of buttons) {
 
             if (userSelection == 'rockButton') {
                 playerInt = 0;
-                console.log("Player chose rock");
+                let userResult = document.getElementById('userResult').innerHTML= "You chose rock";
             }
             else if (userSelection == 'paperButton') {
                 playerInt = 1;
-                console.log("Player chose paper");
+                let userResult = document.getElementById('userResult').innerHTML= "You chose paper";
             }
             else if (userSelection == 'scissorsButton') {
                 playerInt = 2;
-                console.log("Player chose scissors");
+                let userResult = document.getElementById('userResult').innerHTML= "You chose scissors";
             }
 
         if (computerSelection === 0)  {
-            console.log("Computer chose rock");
+            let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose rock";
         } else if (computerSelection === 1) {
             console.log("Computer chose paper");
+            let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose paper";
         } else if (computerSelection === 2) {
-            console.log("Computer chose scissors");
+            let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose scissors";
         }
 
         //Win condition 
         let winner = (winArray[computerSelection][playerInt]);
 
         if (winner === "win")  {
-            console.log("Player wins!");
+            let roundResult = document.getElementById('roundResult').innerHTML= "You win!";
         } else if (winner === "lose") {
-            console.log("Player loses.");
+            let roundResult = document.getElementById('roundResult').innerHTML= "You lose.";
         } else if (winner === "draw") {
-            console.log("It's a draw");}
-
-    })
+            let roundResult = document.getElementById('roundResult').innerHTML= "It's a draw.";
+        }
+    }
+    )
 }
 
