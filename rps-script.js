@@ -27,6 +27,9 @@ for (let button of buttons) {
         buttonClicked = true;
         
         let computerSelection = getComputerChoice();
+        let totalRounds = 0;
+        let playerScore = 0;
+        let CPUScore = 0;
 
         //Converts button clicked to corresponding integer
         if (buttonClicked = true) {

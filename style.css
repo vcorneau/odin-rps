@@ -30,3 +30,40 @@ body {
     border: 20px solid rgb(243, 213, 41);
 }
 
+.results {
+    text-align: center;
+    padding: 0;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+}
+
+.scoreTitle {
+    font-weight: bold;
+    text-align: center;
+}
+
+.playersNames {
+    display:flex;
+    justify-content: center;
+}
+
+.player,
+.playerNumber {
+    text-align: left;
+    margin-right: 5%;
+}
+
+.cpu,
+.cpuScore {
+    text-align: right;
+    margin-left: 5%;
+}
+
+.playerScores {
+    display:flex;
+    justify-content: center;
+}
+
