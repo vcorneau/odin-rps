@@ -6,13 +6,20 @@ let buttonClicked = false;
 let userSelection;
 let playerInt;
 
+let totalRounds = 0;
+let playerScore = 0;
+let cpuScore = 0;
+
+let displayPlayerScore;
+let displayCpuScore;
+
 /*Where Rock is 0, Paper is 1 and Scissors is 2, 
 and the player is on the X axis 
 and CPU on the Y axis of the array. */
 
     
 let winArray = [
-    ["draw", "player", "lose"],
+    ["draw", "win", "lose"],
     ["lose", "draw", "win"],
     ["win", "lose", "draw"],
 ]
@@ -27,13 +34,11 @@ for (let button of buttons) {
         buttonClicked = true;
         
         let computerSelection = getComputerChoice();
-        let totalRounds = 0;
-        let playerScore = 0;
-        let CPUScore = 0;
 
         //Converts button clicked to corresponding integer
         if (buttonClicked = true) {
             userSelection = event.target.id;
+            totalRounds++;
             }
 
             if (userSelection == 'rockButton') {
@@ -52,7 +57,6 @@ for (let button of buttons) {
         if (computerSelection === 0)  {
             let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose rock";
         } else if (computerSelection === 1) {
-            console.log("Computer chose paper");
             let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose paper";
         } else if (computerSelection === 2) {
             let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose scissors";
@@ -63,12 +67,16 @@ for (let button of buttons) {
 
         if (winner === "win")  {
             let roundResult = document.getElementById('roundResult').innerHTML= "You win!";
+            playerScore++;
         } else if (winner === "lose") {
             let roundResult = document.getElementById('roundResult').innerHTML= "You lose.";
+            cpuScore++;
         } else if (winner === "draw") {
             let roundResult = document.getElementById('roundResult').innerHTML= "It's a draw.";
         }
-    }
-    )
-}
 
+        console.log("Player Score: "+playerScore);
+        console.log("CPU score: "+cpuScore);
+        console.log("Total rounds: "+totalRounds);
+    })
+}
