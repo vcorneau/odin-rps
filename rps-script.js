@@ -13,6 +13,8 @@ let cpuScore = 0;
 let displayPlayerScore;
 let displayCpuScore;
 
+let testString = "Game over!"
+
 /*Where Rock is 0, Paper is 1 and Scissors is 2, 
 and the player is on the X axis 
 and CPU on the Y axis of the array. */
@@ -29,6 +31,14 @@ function getComputerChoice() {
     return Math.floor(Math.random()*3);
 }
 
+function maxRounds() {
+    if (totalRounds < 5) {
+        console.log(totalRounds);            
+    } else if (totalRounds  > 5) {
+        console.log(testString);
+    }
+}
+
 for (let button of buttons) {
     button.addEventListener('click', function handleClick() {
         buttonClicked = true;
@@ -43,37 +53,41 @@ for (let button of buttons) {
 
             if (userSelection == 'rockButton') {
                 playerInt = 0;
-                let userResult = document.getElementById('userResult').innerHTML= "You chose rock";
+                document.getElementById('userResult').innerHTML= "You chose rock";
             }
             else if (userSelection == 'paperButton') {
                 playerInt = 1;
-                let userResult = document.getElementById('userResult').innerHTML= "You chose paper";
+                document.getElementById('userResult').innerHTML= "You chose paper";
             }
             else if (userSelection == 'scissorsButton') {
                 playerInt = 2;
-                let userResult = document.getElementById('userResult').innerHTML= "You chose scissors";
+                document.getElementById('userResult').innerHTML= "You chose scissors";
             }
 
         if (computerSelection === 0)  {
-            let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose rock";
+            document.getElementById('cpuResult').innerHTML= "Computer chose rock";
         } else if (computerSelection === 1) {
-            let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose paper";
+            document.getElementById('cpuResult').innerHTML= "Computer chose paper";
         } else if (computerSelection === 2) {
-            let cpuResult = document.getElementById('cpuResult').innerHTML= "Computer chose scissors";
+            document.getElementById('cpuResult').innerHTML= "Computer chose scissors";
         }
 
         //Win condition 
         let winner = (winArray[computerSelection][playerInt]);
 
         if (winner === "win")  {
-            let roundResult = document.getElementById('roundResult').innerHTML= "You win!";
+            document.getElementById('roundResult').innerHTML= "You win!";
             playerScore++;
+            document.getElementById('playerNumber').innerHTML= playerScore;
         } else if (winner === "lose") {
-            let roundResult = document.getElementById('roundResult').innerHTML= "You lose.";
+            document.getElementById('roundResult').innerHTML= "You lose.";
             cpuScore++;
+            document.getElementById('cpuNumber').innerHTML= cpuScore;
         } else if (winner === "draw") {
-            let roundResult = document.getElementById('roundResult').innerHTML= "It's a draw.";
+            document.getElementById('roundResult').innerHTML= "It's a draw.";
         }
+
+
 
         console.log("Player Score: "+playerScore);
         console.log("CPU score: "+cpuScore);
