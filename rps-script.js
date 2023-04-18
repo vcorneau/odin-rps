@@ -31,14 +31,6 @@ function getComputerChoice() {
     return Math.floor(Math.random()*3);
 }
 
-function maxRounds() {
-    if (totalRounds < 5) {
-        console.log(totalRounds);            
-    } else if (totalRounds  > 5) {
-        console.log(testString);
-    }
-}
-
 for (let button of buttons) {
     button.addEventListener('click', function handleClick() {
         buttonClicked = true;
@@ -87,10 +79,14 @@ for (let button of buttons) {
             document.getElementById('roundResult').innerHTML= "It's a draw.";
         }
 
-
-
-        console.log("Player Score: "+playerScore);
-        console.log("CPU score: "+cpuScore);
-        console.log("Total rounds: "+totalRounds);
+        if (totalRounds  >= 5 && cpuScore > playerScore) {
+            console.log("CPU Wins!");
+        } else if (totalRounds >= 5 && cpuScore < playerScore) {
+            console.log("You Win!")
+        } else if (totalRounds >= 5 && cpuScore === playerScore) {
+            console.log("It's a draw!")
+        }
     })
+    
 }
+        
