@@ -32,7 +32,9 @@ body {
 
 .results {
     text-align: center;
-    padding: 0;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5%;
 }
 
 .score {

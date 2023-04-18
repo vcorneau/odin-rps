@@ -10,11 +10,6 @@ let totalRounds = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
-let displayPlayerScore;
-let displayCpuScore;
-
-let testString = "Game over!"
-
 /*Where Rock is 0, Paper is 1 and Scissors is 2, 
 and the player is on the X axis 
 and CPU on the Y axis of the array. */
@@ -80,11 +75,16 @@ for (let button of buttons) {
         }
 
         if (totalRounds  >= 5 && cpuScore > playerScore) {
-            console.log("CPU Wins!");
+            document.getElementById('results').innerHTML= "Final score is Human: "+ playerScore + " CPU: " + cpuScore + ". CPU Wins! Reload the page to start over";
+          
         } else if (totalRounds >= 5 && cpuScore < playerScore) {
-            console.log("You Win!")
+            document.getElementById('results').innerHTML= "Final score is Human: "+ playerScore + " CPU: " + cpuScore + ". You win! Reload the page to start over";
+      
         } else if (totalRounds >= 5 && cpuScore === playerScore) {
-            console.log("It's a draw!")
+            document.getElementById('results').innerHTML= "Final score is Human: "+ playerScore + " CPU: " + cpuScore + ". It's a draw! Reload the page to start over";
+
+
+
         }
     })
     
